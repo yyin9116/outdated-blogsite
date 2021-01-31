@@ -1,13 +1,15 @@
 ---
 title: 小游戏
-date: 2021-01-31 08:46:15
+date: 2021-01-29 17:46:15
 type: "games"
-top_img: /img/2%20(30).png
+top_img: /img/2%20(19).png
 ---
+
 ## 小游戏：
 
 #### 本地链接：
-> 打不开的话就发送链接到QQ中直接打开哦
+
+打不开的话就发送链接到QQ中直接打开哦
 
 [合成大西瓜](../games/game/654/index.html)
 [合成大西瓜(无葡萄)](../games/game/1/index.html)

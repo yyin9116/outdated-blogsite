@@ -1,0 +1,654 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>变压器实验 | Yin's Blog</title><meta name="keywords" content="变压器"><meta name="author" content="Yin"><meta name="copyright" content="Yin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="变压器实验单相变压器实验空载实验 测量变比  绘制空载特性曲线$U_0 &#x3D; f(I_0)$, $P_0 &#x3D; f(U_0), cos\phi &#x3D; f(U_0)$.  计算激磁阻抗   短路实验 绘制短路特性曲线$U_k &#x3D; f(I_k). P_k &#x3D; f(I_k). cos\phi &#x3D; f(U_0).$  计算短路阻抗   1. 单相变压器空载试验步骤 在三相调压交流电源断电的条件下，按图接线。被测">
+<meta property="og:type" content="article">
+<meta property="og:title" content="变压器实验">
+<meta property="og:url" content="https://yyin9116.github.io/2020/09/30/%E5%8F%98%E5%8E%8B%E5%99%A8%E5%AE%9E%E9%AA%8C/index.html">
+<meta property="og:site_name" content="Yin&#39;s Blog">
+<meta property="og:description" content="变压器实验单相变压器实验空载实验 测量变比  绘制空载特性曲线$U_0 &#x3D; f(I_0)$, $P_0 &#x3D; f(U_0), cos\phi &#x3D; f(U_0)$.  计算激磁阻抗   短路实验 绘制短路特性曲线$U_k &#x3D; f(I_k). P_k &#x3D; f(I_k). cos\phi &#x3D; f(U_0).$  计算短路阻抗   1. 单相变压器空载试验步骤 在三相调压交流电源断电的条件下，按图接线。被测">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yyin9116.github.io/img/2%20(9).png">
+<meta property="article:published_time" content="2020-09-30T04:06:34.000Z">
+<meta property="article:modified_time" content="2021-01-31T02:52:51.250Z">
+<meta property="article:author" content="Yin">
+<meta property="article:tag" content="变压器">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yyin9116.github.io/img/2%20(9).png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yyin9116.github.io/2020/09/30/%E5%8F%98%E5%8E%8B%E5%99%A8%E5%AE%9E%E9%AA%8C/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":180,"position":"top","messagePrev":"自上次文章更新已有","messageNext":"天，文章的内容可能已经过时"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":249,"languages":{"author":"作者: Yin","link":"链接: ","source":"来源: Yin's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-centers"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: true
+};
+
+const saveToLocal = {
+  // ttl 單位是 天
+  set: function setWithExpiry(key, value, ttl) {
+    if (ttl === 0) return
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-01-31 10:52:51'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}const fontSizeVal = saveToLocal.get('global-font-size')
+if (fontSizeVal !== undefined) {
+  document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+}})()</script><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xpand_fish.css"><meta name="generator" content="Hexo 5.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-diamond"></i><span> 生活</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 说说</span></a></li><li><a class="site-page" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/games/"><i class="fa-fw fa fa-link"></i><span> 小游戏</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/2%20(9).png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Yin's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-diamond"></i><span> 生活</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 说说</span></a></li><li><a class="site-page" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/games/"><i class="fa-fw fa fa-link"></i><span> 小游戏</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">变压器实验</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-30T04:06:34.000Z" title="发表于 2020-09-30 12:06:34">2020-09-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-31T02:52:51.250Z" title="更新于 2021-01-31 10:52:51">2021-01-31</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="变压器实验"><a href="#变压器实验" class="headerlink" title="变压器实验"></a>变压器实验</h2><h3 id="单相变压器实验"><a href="#单相变压器实验" class="headerlink" title="单相变压器实验"></a>单相变压器实验</h3><h4 id="空载实验"><a href="#空载实验" class="headerlink" title="空载实验"></a>空载实验</h4><ul>
+<li><p>测量变比</p>
+</li>
+<li><p>绘制空载特性曲线$U_0 = f(I_0)$, $P_0 = f(U_0), cos\phi = f(U_0)$.</p>
+</li>
+<li><p>计算激磁阻抗</p>
+</li>
+</ul>
+<h4 id="短路实验"><a href="#短路实验" class="headerlink" title="短路实验"></a>短路实验</h4><ul>
+<li><p>绘制短路特性曲线$U_k = f(I_k). P_k = f(I_k). cos\phi = f(U_0).$</p>
+</li>
+<li><p>计算短路阻抗</p>
+</li>
+</ul>
+<h5 id="1-单相变压器空载试验步骤"><a href="#1-单相变压器空载试验步骤" class="headerlink" title="1. 单相变压器空载试验步骤"></a>1. 单相变压器空载试验步骤</h5><ol>
+<li>在三相调压交流电源断电的条件下，按图接线。被测变压器选用三相组式变压器DJ11中的一只作为单相变压器，其额定容量$P_N=77W，{\frac{U_{1N}}{U_{2N}}={220}／55V}，I_{1N}／I_{2N}=0.35／1.4A$。变压器的低压线圈a、x接电源，高压线圈A、X开路。</li>
+<li>选好所有电表量程。将控制屏左侧调压器旋钮向逆时针方向旋转到底，即将其调到输出电压为零的位置。</li>
+<li>合上交流电源总开关，按下“启动”便接通了三相交流电源。调节三相调压器旋钮，使变压器空载电压$U_0=1.2U_N$，然后逐次降低电源电压，在1.2—0.2$U_N$的范围内，测取变压器的$U_0、I_0、P_0$。</li>
+<li>测取数据时，$U=U_N$点必须测，并在该点附近测的点较密，共测取数据7-8组。 </li>
+</ol>
+<blockquote>
+<p>注意事项：</p>
+<ol>
+<li><p>在低压线圈a、x接电源，高压线圈A、X开路。</p>
+</li>
+<li><p>以电压为准，看着电压表缓慢增加电压。</p>
+</li>
+<li><p>读取数据时，在额定电压点附近密集些，且额定电压点必测。</p>
+</li>
+<li><p>交流电流表、电压表使用：选择合适的量程。功率表使用：先按“功能”键三次，窗口中间显示“P”再按“确认”键，即可。</p>
+</li>
+</ol>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center">实验数据</th>
+<th align="center"></th>
+<th align="center">计算值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center">$U_0(V)$</td>
+<td align="center">$I_0(A)$</td>
+<td align="center">$P_0(W)$</td>
+<td align="center">$U_AX(V)$</td>
+<td align="center">$cos\phi$</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">66.0</td>
+<td align="center">0.103</td>
+<td align="center">2.1</td>
+<td align="center">260</td>
+<td align="center">0.30</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">60.5</td>
+<td align="center">0.066</td>
+<td align="center">1.7</td>
+<td align="center">240</td>
+<td align="center">0.42</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">55.1</td>
+<td align="center">0.048</td>
+<td align="center">1.5</td>
+<td align="center">218</td>
+<td align="center">0.57</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">49.9</td>
+<td align="center">0.039</td>
+<td align="center">1.1</td>
+<td align="center">200</td>
+<td align="center">0.55</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">45.7</td>
+<td align="center">0.033</td>
+<td align="center">0.9</td>
+<td align="center">180</td>
+<td align="center">0.56</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">33.6</td>
+<td align="center">0.022</td>
+<td align="center">0.7</td>
+<td align="center">130</td>
+<td align="center">0.62</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">20.1</td>
+<td align="center">0.015</td>
+<td align="center">0.3</td>
+<td align="center">80</td>
+<td align="center">1.00</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">10.7</td>
+<td align="center">0.010</td>
+<td align="center">0.0</td>
+<td align="center">40</td>
+<td align="center">1.00</td>
+</tr>
+</tbody></table>
+<h4 id="2-单相变压器短路实验内容"><a href="#2-单相变压器短路实验内容" class="headerlink" title="2. 单相变压器短路实验内容"></a>2. 单相变压器短路实验内容</h4><ol>
+<li> 按下控制屏上的“关”按钮，切断三相调压交流电源，按图接线（以后每次改接线路，都要关断电源）。将变压器的高压线圈接电源，低压线圈直接短路。</li>
+<li> 选好所有电表量程，将交流调压器旋钮调到输出电压为零的位置。</li>
+<li> 接通交流电源，逐次缓慢增加输入电压，直到短路电流等于1.1$I_N$为止，在（0.2 ~1.1 ）$I_N$范围内测取变压器的$U_K、I_K、P_K$。</li>
+<li> 测取数据时，$I_K=I_N$点必须测，共测取数据6~7组。实验时记下周围环境温度（℃），短路电阻需换算到75 ℃ 阻值。</li>
+</ol>
+<blockquote>
+<p>注意事项：</p>
+<ol>
+<li>在高压线圈A、X接电源，低压线圈a、x直接短路。</li>
+<li>以电流为准，看着电流表缓慢增加输入电压，电压调节一定要慢。</li>
+<li>读取数据时，在额定点附近密集些，且额定点IK=IN点必测。</li>
+</ol>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center"></th>
+<th align="center">实验数据</th>
+<th align="center"></th>
+<th align="center">计算数据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center">$U_k(V)$</td>
+<td align="center">$I_x(A)$</td>
+<td align="center">$P_k(W)$</td>
+<td align="center">$cos\phi$</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">26.2</td>
+<td align="center">0.385</td>
+<td align="center">4.9</td>
+<td align="center">0.47</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">25.2</td>
+<td align="center">0.370</td>
+<td align="center">4.5</td>
+<td align="center">0.45</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">23.6</td>
+<td align="center">0.348</td>
+<td align="center">3.9</td>
+<td align="center">0.45</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">20.5</td>
+<td align="center">0.303</td>
+<td align="center">3.1</td>
+<td align="center">0.46</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">16.9</td>
+<td align="center">0.250</td>
+<td align="center">2.1</td>
+<td align="center">0.45</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">13.7</td>
+<td align="center">0.203</td>
+<td align="center">1.2</td>
+<td align="center">0.46</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">10.4</td>
+<td align="center">0.153</td>
+<td align="center">0.7</td>
+<td align="center">0.43</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">8.8</td>
+<td align="center">0.071</td>
+<td align="center">0.1</td>
+<td align="center">1.00</td>
+</tr>
+</tbody></table>
+<h6 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h6><ol>
+<li><p>计算变比</p>
+<p> $K=\frac{U_{AX}}{U_{ax}}=\frac{\sum{U_{AX}}}{\sum{U_{ax}}}=3.94\approx4$</p>
+</li>
+<li><p>绘出空载特性曲线和计算激磁参数</p>
+<ol>
+<li><p>绘出空载特性曲线$U_0=f(I_0), P_0=f(U_0), cos\phi_0=f(U_0)$</p>
+<p> 式中：</p>
+<p> $cos\phi_0=\frac{P_0}{U_0I_0}$</p>
+<p> <img src="data:image/png;base64,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"></p>
+</li>
+<li><p>计算激磁参数</p>
+<p> $U_0=U_N$时，$I_0=0.048A,P_0=1.5W$</p>
+<p> $r_m=\frac{P_0}{I_0^2}$</p>
+<p> $Z_m=\frac{U_0}{I_0}$</p>
+<p> $X_m=\sqrt{Z_m^2-r_m^2}$</p>
+<p> 带入数据计算得：</p>
+<p> $r_m = 651.04Ω, Z_m=1145.83Ω, X_m=942.91Ω$</p>
+</li>
+</ol>
+</li>
+<li><p>绘出短路特性曲线和计算短路参数</p>
+<ol>
+<li><p>绘出短路特性曲线$U_K=f(I_K), P_K=f(U_K), cos\phi_K=f(I_K)$</p>
+<p> <img src="data:image/png;base64,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"></p>
+</li>
+<li><p>计算短路参数</p>
+<p> $Z_K=\frac{U_k}{I_K}=5.25$Ω</p>
+<p> $R_K=\frac{P_K}{I_K^2}=2.49$Ω</p>
+<p> $X_K=\sqrt{Z_K^2-R_k^2}=4.62Ω$</p>
+ <img src="F:/Markdown/image-20201013222901210.png" style="zoom:67%;" />
+
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="三相变压器实验内容"><a href="#三相变压器实验内容" class="headerlink" title="三相变压器实验内容"></a>三相变压器实验内容</h3><blockquote>
+<p>掌握用实验方法测定三相变压器的极性</p>
+<p>掌握用实验方法判别变压器的联接组别</p>
+<ul>
+<li>$Y_{y_0}$</li>
+<li>$Y_{d_{11}}$</li>
+</ul>
+</blockquote>
+<h5 id="1-测定相间极性"><a href="#1-测定相间极性" class="headerlink" title="1. 测定相间极性"></a>1. 测定相间极性</h5><p>被测变压器选用三相心式变压器DJ12，用其中高压和低压两组绕组，额定容量$P_N=152／152W，U_N=220／55V，I_N=0.4／1.6A$，Y，y接法。测得阻值大的为高压绕组，用A、B、C、X、Y、Z标记。低压绕组标记用a、b、c、x、y、z。</p>
+<ol>
+<li>按图接线。A、X接电源的U、V两端子，Y、Z短接。</li>
+<li>接通交流电源，在绕组A、X间施加约50％$U_N$的电压。</li>
+<li>用电压表测出电压$U_{BY}、U_{CZ}、U_{BC}$，若$U_{BC}=| U_{BY}-U_{CZ}|$，则首末端标记正确；若$U_{BC}=| U_{BY}+U_{CZ}|$，则标记不对。须将B、C两相任一相绕组的首末端标记对调。</li>
+<li>用同样方法，将B、C两相中的任一相施加电压，另外两相末端相联，定出每相首、末端正确的标记。</li>
+</ol>
+<img src="F:/Markdown/变压器实验.assets/image-20201008103922429.png" width="300">
+
+<p>$U_{BY}=82.9V、U_{CZ}=26.4V、U_{BC}56.2V$, 首末端标记正确。</p>
+<p>更换另一相：$U_{AX}=32.5V、U_{CZ}=54.8V、U_{AC}=0.2V$, 首末端标记正确。</p>
+<h5 id="2-测定原、副方极性"><a href="#2-测定原、副方极性" class="headerlink" title="2. 测定原、副方极性"></a>2. 测定原、副方极性</h5><ol>
+<li>暂时标出三相低压绕组的标记a、b、c、x、y、z，然后按图4-9接线，原、副方中点用导线相连。</li>
+<li>高压三相绕组施加约50％的额定电压，用电压表测量电压$U_{AX}、U_{BY}、U_{CZ}、U_{ax}、U_{by}、U_{cz}、U_{Aa}、U_{Bb}、U_{Cc}$，若$U_{Aa}=U_{AX}-U_{ax}$，则A相高、低压绕组同相，并且首端A与a端点为同极性。若$U_{Aa}=U_{AX}+U_{ax}$，则A与a端点为异极性。</li>
+<li>用同样的方法判别出B、b、C、c两相原、副方的极性。</li>
+<li>高低压三相绕组的极性确定后，根据要求连接出不同的联接组。</li>
+</ol>
+<img src="F:/Markdown/变压器实验.assets/image-20201008105324799.png" width="300">
+
+<p>$U_{AX}=110V、U_{BY}=100V、U_{CZ}=109V、U_{ax}=27.7V、U_{by}=27.6V、U_{cz}=27.3V、U_{Aa}=82.6V、U_{Bb}=82.8V、U_{Cc}82.1V$</p>
+<p>​    $U_{Aa}=U_{AX}-U_{ax}$, A 和 a极性相同。</p>
+<p>同理： B 和b 极性相同，  C 和 c 极性相同。</p>
+<h5 id="3-检查连接组-Yy-0-连接组"><a href="#3-检查连接组-Yy-0-连接组" class="headerlink" title="3. 检查连接组$Yy_0$连接组"></a>3. 检查连接组$Yy_0$连接组</h5><p>A、a两端点用导线联接，在高压方施加三相对称的额定电压，测出$U_{AB}、U_{ab}、U_{Bb}、U_{Cc}及U_{bc}$。</p>
+<p>根据Y，y -0联接组的电势相量图可知：</p>
+<p>$U_{Bb} = U_{Cc} = (K_L -1)U_{ab}$</p>
+<p>$U_{Bc} = U_{ab}\sqrt{K_L^2 - K_L +1}$</p>
+<p>$K_L= \frac{U_{AB}}{U_{ab}}$</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center">实验数据</th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center">计算数据</th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$U_{AB}(V)$</td>
+<td align="center">$U_{ab}(V)$</td>
+<td align="center">$U_{Bb}(V)$</td>
+<td align="center">$U_{Cc}(V)$</td>
+<td align="center">$U_{cb}(V)$</td>
+<td align="center">$K_L= \frac{U_{AB}}{U_{ab}}$</td>
+<td align="center">$U_{Bb}(V)$</td>
+<td align="center">$U_{Cc}(V)$</td>
+<td align="center">$U_{Bc}(V)$</td>
+</tr>
+<tr>
+<td align="center">377</td>
+<td align="center">94.0</td>
+<td align="center">286</td>
+<td align="center">286</td>
+<td align="center">343</td>
+<td align="center">4.011</td>
+<td align="center">283</td>
+<td align="center">283</td>
+<td align="center">339.9</td>
+</tr>
+</tbody></table>
+<img src="F:/Markdown/变压器实验.assets/image-20201008110019585.png" width="300">
+
+<h5 id="4-检验联结组-Yd-11"><a href="#4-检验联结组-Yd-11" class="headerlink" title="4. 检验联结组$Yd_{11}$"></a>4. 检验联结组$Yd_{11}$</h5><p>A、a两端点用导线相连，高压方施加对称额定电压，测取UAB、Uab、UBb、UCc及UBc</p>
+<p>根据Y，d-11联接组的电势相量图可知：</p>
+<p>$U_{Bb} = U_{Cc} = U_{Bc} = U_{ab}\sqrt{K_L^2 - \sqrt3K_L +1}$</p>
+<img src="F:/Markdown/变压器实验.assets/image-20201008144104080.png" width="300">
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th><strong>实验数据</strong></th>
+<th></th>
+<th></th>
+<th></th>
+<th>计算数据</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$U_{AB}(V)$</td>
+<td>$U_{ab}(V)$</td>
+<td>$U_{Bb}(V)$</td>
+<td>$U_{Cc}(V)$</td>
+<td>$U_{cb}(V)$</td>
+<td>$K_L= \frac{U_{AB}}{U_{ab}}$</td>
+<td>$U_{Bb}(V)$</td>
+<td>$U_{Cc}(V)$</td>
+<td>$U_{Bc}(V)$</td>
+</tr>
+<tr>
+<td>380</td>
+<td>54.8</td>
+<td>335</td>
+<td>335</td>
+<td>54.6</td>
+<td>6.934</td>
+<td>333.7</td>
+<td>333.7</td>
+<td>333.7</td>
+</tr>
+</tbody></table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Yin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://yyin9116.github.io/2020/09/30/%E5%8F%98%E5%8E%8B%E5%99%A8%E5%AE%9E%E9%AA%8C/">https://yyin9116.github.io/2020/09/30/%E5%8F%98%E5%8E%8B%E5%99%A8%E5%AE%9E%E9%AA%8C/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yyin9116.github.io" target="_blank">Yin's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8F%98%E5%8E%8B%E5%99%A8/">变压器</a></div><div class="post_share"><div class="social-share" data-image="/img/2%20(9).png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/10/12/%E5%BC%82%E6%AD%A5%E7%94%B5%E6%9C%BA%E5%AE%9E%E9%AA%8C/"><img class="prev-cover" src="/img/2%20(25).png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">异步电机实验</div></div></a></div><div class="next-post pull-right"><a href="/2020/09/15/%E5%90%8C%E6%AD%A5%E7%94%B5%E6%9C%BA%E5%AE%9E%E9%AA%8C/"><img class="next-cover" src="/img/2%20(6).png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">同步电机实验</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Yin</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div></div><a class="button--animated" id="card-info-btn" href="https://yyin9116.github.io/"><i class="fa fa-bookmark"></i><span>访问</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="tencent://message/?uin=2803487936" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">支持在线小游戏游玩</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%8E%8B%E5%99%A8%E5%AE%9E%E9%AA%8C"><span class="toc-number">1.</span> <span class="toc-text">变压器实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E7%9B%B8%E5%8F%98%E5%8E%8B%E5%99%A8%E5%AE%9E%E9%AA%8C"><span class="toc-number">1.1.</span> <span class="toc-text">单相变压器实验</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A9%BA%E8%BD%BD%E5%AE%9E%E9%AA%8C"><span class="toc-number">1.1.1.</span> <span class="toc-text">空载实验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%AD%E8%B7%AF%E5%AE%9E%E9%AA%8C"><span class="toc-number">1.1.2.</span> <span class="toc-text">短路实验</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%8D%95%E7%9B%B8%E5%8F%98%E5%8E%8B%E5%99%A8%E7%A9%BA%E8%BD%BD%E8%AF%95%E9%AA%8C%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">1. 单相变压器空载试验步骤</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%8D%95%E7%9B%B8%E5%8F%98%E5%8E%8B%E5%99%A8%E7%9F%AD%E8%B7%AF%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.3.</span> <span class="toc-text">2. 单相变压器短路实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-number">1.1.3.0.1.</span> <span class="toc-text">实验结果</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%9B%B8%E5%8F%98%E5%8E%8B%E5%99%A8%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.2.</span> <span class="toc-text">三相变压器实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%B5%8B%E5%AE%9A%E7%9B%B8%E9%97%B4%E6%9E%81%E6%80%A7"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">1. 测定相间极性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E6%B5%8B%E5%AE%9A%E5%8E%9F%E3%80%81%E5%89%AF%E6%96%B9%E6%9E%81%E6%80%A7"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">2. 测定原、副方极性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E6%A3%80%E6%9F%A5%E8%BF%9E%E6%8E%A5%E7%BB%84-Yy-0-%E8%BF%9E%E6%8E%A5%E7%BB%84"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">3. 检查连接组$Yy_0$连接组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E6%A3%80%E9%AA%8C%E8%81%94%E7%BB%93%E7%BB%84-Yd-11"><span class="toc-number">1.2.0.4.</span> <span class="toc-text">4. 检验联结组$Yd_{11}$</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/11/30/%E7%9B%B4%E6%B5%81%E7%94%B5%E6%9C%BA%E5%AE%9E%E9%AA%8C/" title="直流电机实验"><img src="/img/2%20(10).png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="直流电机实验"/></a><div class="content"><a class="title" href="/2020/11/30/%E7%9B%B4%E6%B5%81%E7%94%B5%E6%9C%BA%E5%AE%9E%E9%AA%8C/" title="直流电机实验">直流电机实验</a><time datetime="2020-11-30T01:07:26.000Z" title="发表于 2020-11-30 09:07:26">2020-11-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/11/Simulink%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Simulink学习笔记"><img src="/img/1%20(3).jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Simulink学习笔记"/></a><div class="content"><a class="title" href="/2020/11/11/Simulink%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Simulink学习笔记">Simulink学习笔记</a><time datetime="2020-11-11T05:01:22.000Z" title="发表于 2020-11-11 13:01:22">2020-11-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/10/28/Simulink%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E4%BB%BF%E7%9C%9F%E8%AE%B0%E5%BD%95/" title="Simulink控制系统仿真记录"><img src="/img/2%20(14).png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Simulink控制系统仿真记录"/></a><div class="content"><a class="title" href="/2020/10/28/Simulink%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E4%BB%BF%E7%9C%9F%E8%AE%B0%E5%BD%95/" title="Simulink控制系统仿真记录">Simulink控制系统仿真记录</a><time datetime="2020-10-28T03:02:03.000Z" title="发表于 2020-10-28 11:02:03">2020-10-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/10/15/Simulink%E4%BB%BF%E7%9C%9F%E6%96%87%E6%A1%A3%E5%8F%82%E8%80%83/" title="Simulink仿真文档参考"><img src="/img/2%20(8).jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Simulink仿真文档参考"/></a><div class="content"><a class="title" href="/2020/10/15/Simulink%E4%BB%BF%E7%9C%9F%E6%96%87%E6%A1%A3%E5%8F%82%E8%80%83/" title="Simulink仿真文档参考">Simulink仿真文档参考</a><time datetime="2020-10-15T04:58:07.000Z" title="发表于 2020-10-15 12:58:07">2020-10-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/10/12/%E5%BC%82%E6%AD%A5%E7%94%B5%E6%9C%BA%E5%AE%9E%E9%AA%8C/" title="异步电机实验"><img src="/img/2%20(25).png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="异步电机实验"/></a><div class="content"><a class="title" href="/2020/10/12/%E5%BC%82%E6%AD%A5%E7%94%B5%E6%9C%BA%E5%AE%9E%E9%AA%8C/" title="异步电机实验">异步电机实验</a><time datetime="2020-10-12T12:07:11.000Z" title="发表于 2020-10-12 20:07:11">2020-10-12</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/2%20(9).png')"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      placeholder: '📌在此留言....📌',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign(initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/gh/xiaopengand/blogCdn@latest/fishes.js"></script><div class="aplayer no-destroy" data-id="6588079659" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="true" data-text="Clam,Stay,Night,Love" data-fontsize="15px" data-random="true" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
