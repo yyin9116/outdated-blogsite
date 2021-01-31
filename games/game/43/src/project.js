@@ -642,7 +642,6 @@ window.__require = function e(t, n, o) {
             function t() {
                 var t = null !== e && e.apply(this, arguments) || this;
                 return t.adsbutton = [],
-                t.adsbutton2 = [],
                 t.caidia = [],
                 t.fllows = [],
                 t.fruit = [],
@@ -666,7 +665,6 @@ window.__require = function e(t, n, o) {
             ,
             t.Instance = null,
             c([r(cc.SpriteFrame)], t.prototype, "adsbutton", void 0),
-            c([r(cc.SpriteFrame)], t.prototype, "adsbutton2", void 0),
             c([r(cc.SpriteFrame)], t.prototype, "caidia", void 0),
             c([r(cc.SpriteFrame)], t.prototype, "fllows", void 0),
             c([r(cc.SpriteFrame)], t.prototype, "fruit", void 0),
@@ -1461,11 +1459,10 @@ window.__require = function e(t, n, o) {
           , i = e("../Common/Utils")
           , r = e("./MainGameUi")
           , s = e("../common/PlayerInfo")
-          , l = e("../common/DynamicLoad")
-          , u = cc._decorator
-          , d = u.ccclass
-          , p = u.property
-          , f = function(e) {
+          , l = cc._decorator
+          , u = l.ccclass
+          , d = l.property
+          , p = function(e) {
             function t() {
                 var t = null !== e && e.apply(this, arguments) || this;
                 return t.clickMask = null,
@@ -1473,6 +1470,9 @@ window.__require = function e(t, n, o) {
                 t.di = null,
                 t.levelTxt = null,
                 t.guan = null,
+                t.finishPercent = null,
+                t.percentT = null,
+                t.percentSignSp = null,
                 t.continueTip = null,
                 t.scoreLabel = null,
                 t.highScoreNode = null,
@@ -1483,6 +1483,7 @@ window.__require = function e(t, n, o) {
                 t.moreGameBtn = null,
                 t.reStartBtn = null,
                 t.failedBoxPos = cc.v2(0, -500),
+                t.wineSui = null,
                 t.standardScore = 0,
                 t.canClick = !1,
                 t.bgMask = null,
@@ -1490,8 +1491,6 @@ window.__require = function e(t, n, o) {
                 t.bencichengjiarr = [],
                 t.gengduoyouxi = null,
                 t.gengduoyouxiarr = [],
-                t.adsButton2 = null,
-                t.bannerButton = null,
                 t
             }
             var n;
@@ -1506,22 +1505,11 @@ window.__require = function e(t, n, o) {
             }
             ,
             t.prototype.start = function() {
-                var e = this
-                  , t = i.default.returnCurrentLanType();
-                1 != t && (this.bencichengji.getComponent(cc.Sprite).spriteFrame = this.bencichengjiarr[t - 1],
-                this.gengduoyouxi.getComponent(cc.Sprite).spriteFrame = this.gengduoyouxiarr[t - 1]),
-                this.continueTip.getComponent(cc.Label).string = 1 == t ? "\u70b9\u51fb\u7ee7\u7eed" : 2 == t ? "\u9ede\u64ca\u7e7c\u7e8c" : 4 == t ? "\ud074\ub9ad \ud558\uc5ec \uacc4\uc18d" : "Click Continue",
-                this.reStartBtn.runAction(cc.repeatForever(cc.sequence(cc.scaleTo(.5, 1.1), cc.scaleTo(.55, 1), cc.delayTime(.5)))),
-                cc.tween(this.moreGameBtn).to(.5, {
-                    scale: 1.1
-                }).to(.5, {
-                    scale: 1
-                }).union().repeatForever().start(),
-                cc.tween(this.adsButton2).call(function() {
-                    e.adsButton2.children[0].getComponent(cc.Sprite).spriteFrame = l.default.Instance.adsbutton2[0]
-                }).delay(.5).call(function() {
-                    e.adsButton2.children[0].getComponent(cc.Sprite).spriteFrame = l.default.Instance.adsbutton2[1]
-                }).delay(.5).union().repeatForever().start()
+                var e = i.default.returnCurrentLanType();
+                1 != e && (this.bencichengji.getComponent(cc.Sprite).spriteFrame = this.bencichengjiarr[e - 1],
+                this.gengduoyouxi.getComponent(cc.Sprite).spriteFrame = this.gengduoyouxiarr[e - 1]),
+                this.continueTip.getComponent(cc.Label).string = 1 == e ? "\u70b9\u51fb\u7ee7\u7eed" : 2 == e ? "\u9ede\u64ca\u7e7c\u7e8c" : 4 == e ? "\ud074\ub9ad \ud558\uc5ec \uacc4\uc18d" : "Click Continue",
+                this.reStartBtn.runAction(cc.repeatForever(cc.sequence(cc.scaleTo(.5, 1.1), cc.scaleTo(.55, 1), cc.delayTime(.5))))
             }
             ,
             t.prototype.update = function(e) {}
@@ -1580,37 +1568,38 @@ window.__require = function e(t, n, o) {
             }
             ,
             t.Instance = null,
-            c([p(cc.Node)], t.prototype, "clickMask", void 0),
-            c([p(cc.Node)], t.prototype, "failedUiBox", void 0),
-            c([p(cc.Node)], t.prototype, "di", void 0),
-            c([p(cc.Label)], t.prototype, "levelTxt", void 0),
-            c([p(cc.Node)], t.prototype, "guan", void 0),
-            c([p(cc.Node)], t.prototype, "continueTip", void 0),
-            c([p(cc.Label)], t.prototype, "scoreLabel", void 0),
-            c([p(cc.Node)], t.prototype, "highScoreNode", void 0),
-            c([p(cc.Node)], t.prototype, "highScore", void 0),
-            c([p(cc.Label)], t.prototype, "highScoreLabel", void 0),
-            c([p(cc.Label)], t.prototype, "resultTxt", void 0),
-            c([p(cc.Label)], t.prototype, "overTxt", void 0),
-            c([p(cc.Node)], t.prototype, "moreGameBtn", void 0),
-            c([p(cc.Node)], t.prototype, "reStartBtn", void 0),
-            c([p(cc.Vec2)], t.prototype, "failedBoxPos", void 0),
-            c([p], t.prototype, "standardScore", void 0),
-            c([p(cc.Node)], t.prototype, "bgMask", void 0),
-            c([p(cc.Node)], t.prototype, "bencichengji", void 0),
-            c([p(cc.SpriteFrame)], t.prototype, "bencichengjiarr", void 0),
-            c([p(cc.Node)], t.prototype, "gengduoyouxi", void 0),
-            c([p(cc.SpriteFrame)], t.prototype, "gengduoyouxiarr", void 0),
-            c([p(cc.Node)], t.prototype, "adsButton2", void 0),
-            c([p(cc.Node)], t.prototype, "bannerButton", void 0),
-            t = n = c([d], t)
+            c([d(cc.Node)], t.prototype, "clickMask", void 0),
+            c([d(cc.Node)], t.prototype, "failedUiBox", void 0),
+            c([d(cc.Node)], t.prototype, "di", void 0),
+            c([d(cc.Label)], t.prototype, "levelTxt", void 0),
+            c([d(cc.Node)], t.prototype, "guan", void 0),
+            c([d(cc.Node)], t.prototype, "finishPercent", void 0),
+            c([d(cc.Label)], t.prototype, "percentT", void 0),
+            c([d(cc.Node)], t.prototype, "percentSignSp", void 0),
+            c([d(cc.Node)], t.prototype, "continueTip", void 0),
+            c([d(cc.Label)], t.prototype, "scoreLabel", void 0),
+            c([d(cc.Node)], t.prototype, "highScoreNode", void 0),
+            c([d(cc.Node)], t.prototype, "highScore", void 0),
+            c([d(cc.Label)], t.prototype, "highScoreLabel", void 0),
+            c([d(cc.Label)], t.prototype, "resultTxt", void 0),
+            c([d(cc.Label)], t.prototype, "overTxt", void 0),
+            c([d(cc.Node)], t.prototype, "moreGameBtn", void 0),
+            c([d(cc.Node)], t.prototype, "reStartBtn", void 0),
+            c([d(cc.Vec2)], t.prototype, "failedBoxPos", void 0),
+            c([d(cc.Node)], t.prototype, "wineSui", void 0),
+            c([d], t.prototype, "standardScore", void 0),
+            c([d(cc.Node)], t.prototype, "bgMask", void 0),
+            c([d(cc.Node)], t.prototype, "bencichengji", void 0),
+            c([d(cc.SpriteFrame)], t.prototype, "bencichengjiarr", void 0),
+            c([d(cc.Node)], t.prototype, "gengduoyouxi", void 0),
+            c([d(cc.SpriteFrame)], t.prototype, "gengduoyouxiarr", void 0),
+            t = n = c([u], t)
         }(cc.Component);
-        n.default = f,
+        n.default = p,
         cc._RF.pop()
     }
     , {
         "../Common/Utils": "Utils",
-        "../common/DynamicLoad": "DynamicLoad",
         "../common/PlayerInfo": "PlayerInfo",
         "./GameManager": "GameManager",
         "./MainGameUi": "MainGameUi"
@@ -1743,8 +1732,17 @@ window.__require = function e(t, n, o) {
                     opacity: 0
                 }).union().repeatForever().start(),
                 this.lineNode.children[0].active = !1,
-                this.fruitS = ["PuTaoS", "YingTaoS", "JuZiS", "NingMengS", "MiHouTaoS", "XiHongShiS", "TaoS", "BoLuoS", "YeZiS", "XiGuaS"],
-                this.createOneFruit(9)//第一个水果
+                this.fruitS = ["PuTaoS",
+                    "YingTaoS",
+                    "JuZiS",
+                    "NingMengS",
+                    "MiHouTaoS",
+                    "XiHongShiS",
+                    "TaoS",
+                    "BoLuoS",
+                    "YeZiS",
+                    "XiGuaS"],
+                this.createOneFruit(9)
             }
             ,
             t.prototype.update = function(e) {
@@ -1810,7 +1808,7 @@ window.__require = function e(t, n, o) {
                 return e
             }
             ,
-            t.prototype.createOneFruit = function(e) {//生成水果函数
+            t.prototype.createOneFruit = function(e) {
                 var t = this
                   , n = cc.instantiate(this.fruitPre);
                 n.parent = this.lineNode,
@@ -1821,8 +1819,9 @@ window.__require = function e(t, n, o) {
                 n.scale = 0,
                 n.getComponent(cc.RigidBody).type = cc.RigidBodyType.Static,
                 n.getComponent(cc.PhysicsCircleCollider).radius = 0,
+                    //n.getComponent(cc.PhysicsCircleCollider).restitution = 0.8,
                 n.getComponent(cc.PhysicsCircleCollider).apply(),
-                cc.tween(n).to(.5, {
+                cc.tween(n).to(.1, {
                     scale: 1
                 }, {
                     easing: "backOut"
@@ -2408,14 +2407,13 @@ window.__require = function e(t, n, o) {
                 a.default.Instance.targetFruit.getComponent(cc.RigidBody).type = cc.RigidBodyType.Dynamic,
                 a.default.Instance.targetFruit.getComponent(cc.RigidBody).linearVelocity = cc.v2(0, -800),
                 a.default.Instance.targetFruit = null,
-				//随机水果
                 this.scheduleOnce(function() {
                     i.default.GameUpdateCtrl && (0 == t.createFruitCount ? (a.default.Instance.createOneFruit(9),
                     t.createFruitCount++) : 1 == t.createFruitCount ? (a.default.Instance.createOneFruit(8),
                     t.createFruitCount++) : 2 == t.createFruitCount ? (a.default.Instance.createOneFruit(7),
                     t.createFruitCount++) : 3 == t.createFruitCount ? (a.default.Instance.createOneFruit(6),
-                    t.createFruitCount++) : 4 == t.createFruitCount ? (a.default.Instance.createOneFruit(5),
-                    t.createFruitCount++) : 5 == t.createFruitCount ? (a.default.Instance.createOneFruit(5),
+                    t.createFruitCount++) : 4 == t.createFruitCount ? (a.default.Instance.createOneFruit(7),
+                    t.createFruitCount++) : 5 == t.createFruitCount ? (a.default.Instance.createOneFruit(6),
                     t.createFruitCount++) : t.createFruitCount > 5 && (a.default.Instance.createOneFruit(s.default.RandomInteger(5, 9)),
                     t.createFruitCount++))
                 }, .5))
@@ -3020,6 +3018,10 @@ window.__require = function e(t, n, o) {
                 this.UpdateScoreLabel(e),
                 this.lerpCtrl && this.lerpNumFunc(this.passlevelYQ),
                 this.levelPanel.children[1].getComponent(cc.Label).string = s.default.Instance.GetLevel().toString()
+            }
+            ,
+            t.prototype.adsButtonFunc = function() {
+                window.location.href = "https://interaction.clotfun.online/horse?appkey=8fa2be346ab599d74b7b35732652ab4d&adSpaceKey=83e7c46c40f572de847a2d1b541f19b5&from=H5&1=1"
             }
             ,
             t.prototype.TestPasslevel = function() {
@@ -5306,7 +5308,7 @@ window.__require = function e(t, n, o) {
                 }, .25),
                 this.returnNumber = !1),
                 "fruitNode" == this.node.parent.name && (this.testEndDJS += e),
-                this.node.y + this.node.width / 2 > cc.find("Canvas/lineNode").children[0].y && 0 == this.pengzhuangCount && this.endCtrl && 0 == this.endOne && this.testEndDJS > 3 && true) {//无敌(把前面的true改为false即可无敌)
+                this.node.y + this.node.width / 2 > cc.find("Canvas/lineNode").children[0].y && 0 == this.pengzhuangCount && this.endCtrl && 0 == this.endOne && this.testEndDJS > 3) {
                     a.default.GameUpdateCtrl = !1,
                     a.default.playerTouch = !1;
                     for (var n = 0; n < cc.find("Canvas/fruitNode").children.length; n++)
@@ -5348,8 +5350,7 @@ window.__require = function e(t, n, o) {
                     null != t.node.getComponent(cc.RigidBody) && (t.node.getComponent(cc.RigidBody).angularVelocity = 0);
                     var c = this.fruitNumber
                       , r = n.node.getComponent("fruitData").fruitNumber;
-					  //合成逻辑0-8(0为葡萄，8为椰子)
-                    c == r && (c < 10 && c > 0) && (r < 10 && r > 0) ? (this.pengzhuangCount += 1,
+                    c == r && c <= 9 && r <= 9 && c!=1 && c!=0 ? (this.pengzhuangCount += 1,
                     0 == t.node.getComponent("fruitData").getNumber() && (a.default.score += this.fruitNumber + 1,
                     u.default.Instance.SetScoreTween(a.default.score),
                     n.node.getComponent(cc.PhysicsCircleCollider).radius = 0,
@@ -5366,7 +5367,7 @@ window.__require = function e(t, n, o) {
                         t.node.active = !1,
                         n.node.destroy(),
                         t.node.destroy()
-                    }).start())) : c == r && 9 == c && 9 == r && (this.pengzhuangCount += 1,
+                    }).start())) : c == r && 1 == c && 1 == r ? (this.pengzhuangCount += 1,
                     0 == t.node.getComponent("fruitData").getNumber() && (a.default.score += this.fruitNumber + 1,
                     u.default.Instance.SetScoreTween(a.default.score),
                     n.node.getComponent(cc.PhysicsCircleCollider).radius = 0,
@@ -5379,7 +5380,7 @@ window.__require = function e(t, n, o) {
                     }).call(function() {
                         i.default.Instance.createFruitSui(o.fruitNumber, n.node.position),
                         i.default.Instance.createFruitL(o.fruitNumber, n.node.position, n.node.width),
-                        i.default.Instance.createLevelUpFruit(o.fruitNumber + 1, n.node.position);
+                        i.default.Instance.createLevelUpFruit(o.fruitNumber - 1, n.node.position);
                         var e = cc.find("Canvas/upEffectParent").getChildByName("daxigua");
                         e.active = !0,
                         e.opacity = 0,
@@ -5387,7 +5388,7 @@ window.__require = function e(t, n, o) {
                             opacity: 150
                         }).start();
                         var c = new cc.Node;
-                        c.addComponent(cc.Sprite).spriteFrame = l.default.Instance.fruit[10],//结束界面水果
+                        c.addComponent(cc.Sprite).spriteFrame = l.default.Instance.fruit[0],
                         c.parent = cc.find("Canvas/upEffectParent"),
                         c.position = cc.v2(0, -500),
                         c.scale = 0;
@@ -5400,7 +5401,7 @@ window.__require = function e(t, n, o) {
                             angle: 360
                         }).repeatForever().start();
                         var s = new cc.Node;
-                        s.addComponent(cc.Sprite).spriteFrame = l.default.Instance.fruit[10],//结束界面水果
+                        s.addComponent(cc.Sprite).spriteFrame = l.default.Instance.fruit[0],
                         s.parent = c,
                         s.position = cc.v2(0),
                         d.default.Instance.Play(4, !1, 1),
@@ -5416,7 +5417,27 @@ window.__require = function e(t, n, o) {
                         t.node.active = !1,
                         n.node.destroy(),
                         t.node.destroy()
+                    }).start())):
+                        c == r && c == 10 && r == 10 &&
+                        (this.pengzhuangCount += 1,
+                    0 == t.node.getComponent("fruitData").getNumber() && (a.default.score += this.fruitNumber + 1,
+                    u.default.Instance.SetScoreTween(a.default.score),
+                    n.node.getComponent(cc.PhysicsCircleCollider).radius = 0,
+                    n.node.getComponent(cc.PhysicsCircleCollider).apply(),
+                    this.node.getComponent(cc.PhysicsCircleCollider).radius = 0,
+                    this.node.getComponent(cc.PhysicsCircleCollider).apply(),
+                    cc.tween(t.node).to(.1, {
+                        position: n.node.position
+                    }).call(function() {
+                        i.default.Instance.createFruitSui(o.fruitNumber, n.node.position),
+                        i.default.Instance.createFruitL(o.fruitNumber, n.node.position, n.node.width),
+                        i.default.Instance.createLevelUpFruit(0, n.node.position),
+                        n.node.active = !1,
+                        t.node.active = !1,
+                        n.node.destroy(),
+                        t.node.destroy()
                     }).start()))
+
                 }
             }
             ,
